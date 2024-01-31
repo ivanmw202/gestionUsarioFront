@@ -1,0 +1,60 @@
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12-text-center">
+            <h2 style="text-align: center;">Lista de domicilios</h2>
+
+        </div>
+    </div> 
+    
+
+    <div class="row">
+        <div class="col-12">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">CALLE</th>
+                    <th scope="col">NUMERO INTERIOR</th>
+                    <th scope="col">NUMERO EXTERIOR</th>
+                    <th scope="col">COLONIA</th>
+                    <th scope="col">CP</th>
+                    <th scope="col">MUNICIPIO</th>
+                    <th scope="col">ESTADO</th>
+                    <th scope="col">ID USUARIO</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let c of listaDomicilio">
+                    <th scope="row">{{ c.id}}</th>
+                    <td>{{ c.calle }}</td>
+                    <td>{{c.numeroInterior}} </td>
+                    <td>{{c.numeroxteriro}} </td>
+                    <td>{{c.colonia}} </td>
+                    <td>{{c.cp}} </td>
+                    <td>{{c.municipio}} </td>
+                    <td>{{c.estado}} </td>
+                    <td>{{ c.usuario.nombre}} </td>
+                
+                    <td>
+                        <a  class="btn btn-xs btn-warning" [routerLink]="['/domicilio/detalle', c.id]" >Detalle</a>
+                    </td>
+
+                    <td>
+                        <a  class="btn btn-xs btn-dark" [routerLink]="['/domicilio/editar', c.id]" >Editar</a>
+                    </td>
+
+                    <td>
+                        <button  class="btn btn-xs btn-danger" (click)="eliminar(c.id)" >Eliminar</button>
+                    </td>
+
+                    
+
+                  </tr>
+                  
+                </tbody>
+              </table>
+        </div>
+    </div>
+</div>
